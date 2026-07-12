@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import QRCode from "react-qr-code";
 import { Smartphone } from "lucide-react";
 import { DEFAULT_REF, SITE_URL } from "@/lib/config";
+import { t } from "@/lib/i18n";
 
 /**
  * QR code pointing at the canonical production URL (SITE_URL) while preserving
@@ -22,6 +23,9 @@ export default function KioskQR({ shopRef }) {
     const target = new URL(base);
     target.pathname = "/";
     target.searchParams.set("ref", shopRef || DEFAULT_REF);
+    // Client-only URL (origin fallback) built post-hydration on purpose — see
+    // useShopRef for the same SSR-safe rationale.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setUrl(target.toString());
   }, [shopRef]);
 
@@ -36,7 +40,7 @@ export default function KioskQR({ shopRef }) {
       </div>
       <p className="flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-flash-yellow">
         <Smartphone className="h-4 w-4" />
-        Continue on mobile
+        {t("qr.continue")}
       </p>
     </div>
   );

@@ -1,6 +1,7 @@
 import Script from "next/script";
 import "./globals.css";
 import { BRAND_NAME, TP_DRIVE_SRC, LOCALE } from "@/lib/config";
+import ServiceWorkerRegister from "@/components/ServiceWorkerRegister";
 
 export const metadata = {
   title: BRAND_NAME,
@@ -19,7 +20,10 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang={LOCALE}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <ServiceWorkerRegister />
+      </body>
       {/* Optional Travelpayouts "Drive" script (domain verification + tracking).
           Runs on every page: `beforeInteractive` preloads it in the initial
           server <head> and runs it before hydration. Injected only when

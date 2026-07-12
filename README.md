@@ -42,6 +42,7 @@ changes required. Everything is configured through environment variables.
 - **Mobile-continuity QR** — the customer scans it to finish on their phone,
   keeping the shop `?ref=` intact.
 - **Optional "Popular flights"** button to your results / White Label page.
+- **Embeddable** on any website with a one-line `<script>` (`/embed` + `embed.js`).
 - Fully **rebrandable** (name + colours) via env vars, **installable PWA**.
 - **Resilient by design** — service worker caches the app shell (reloads offline
   if the wifi drops), self-healing error screen, and the screen stays awake.
@@ -88,6 +89,25 @@ later requires a redeploy** (uncheck "Use existing Build Cache").
 Open the deployed URL with a shop ref, e.g.
 `https://your-app.com/?ref=shop-name`, and put the tablet in guided-access /
 kiosk mode.
+
+---
+
+## Embed on an existing website
+
+Besides the full-screen kiosk, the search widget can be dropped into any
+website with **one line** — like a Calendly/Typeform embed:
+
+```html
+<script src="https://your-app.com/embed.js" data-ref="your-shop" async></script>
+```
+
+- Injects a responsive `<iframe>` of the flight-search widget right where the
+  script is placed (or into `data-target="#some-element"`).
+- Auto-resizes to its content height, transparent background to blend in.
+- Tracked by `data-ref` (same `?ref=` → marker model as the kiosk).
+
+The widget lives at `/embed?ref=...` and is the only route allowed to be framed
+by third-party sites (every other route stays `X-Frame-Options: SAMEORIGIN`).
 
 ---
 

@@ -1,5 +1,15 @@
 # Flight Kiosk Widget
 
+<p align="center">
+  <a href="https://vercel.com/new/clone?repository-url=https://github.com/tovrr/flight-kiosk-widget">
+    <img src="https://vercel.com/button" alt="Deploy with Vercel" height="34">
+  </a>
+  &nbsp;
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-black.svg" alt="MIT License"></a>
+  <img src="https://img.shields.io/badge/Next.js-16-black?logo=nextdotjs&logoColor=white" alt="Next.js 16">
+  <img src="https://img.shields.io/badge/Travelpayouts-affiliate-ffe800?labelColor=0a0a0a" alt="Travelpayouts affiliate">
+</p>
+
 A self-service **flight-booking kiosk** for physical shops — designed to run
 fullscreen on a tablet/iPad in kiosk mode. A customer searches for a flight,
 compares prices, and books, while the partner shop is tracked via a `?ref=`
@@ -128,6 +138,73 @@ blocks it you'll see the offline fallback — that's expected locally.
   (`AttractScreen.js`, `KioskScreen.js`); the widget itself follows
   `NEXT_PUBLIC_LOCALE`.
 - **Icon** → replace `app/icon.svg`.
+
+## FAQ
+
+<details>
+<summary><strong>How much do I earn?</strong></summary>
+
+Travelpayouts pays you a **commission on each completed booking** made through
+your widget. Rates depend on the program and product (flights, hotels, etc.)
+and are set by Travelpayouts, not by this template — check your dashboard for
+current rates. You keep 100% of your own marker's commissions. On top of that,
+the **referral programme** pays you an extra share of the revenue of partners
+who signed up through your referral link.
+</details>
+
+<details>
+<summary><strong>Do customers pay me? Do I handle money or cards?</strong></summary>
+
+**No.** The customer pays the airline or online travel agency directly on the
+results/checkout page. You never touch payments, cards, or refunds — so there's
+no PCI/payment compliance to worry about. Travelpayouts pays your commission
+separately, on their payout schedule.
+</details>
+
+<details>
+<summary><strong>Can I change the name and colours?</strong></summary>
+
+Yes, with zero code:
+- **Name** → `NEXT_PUBLIC_BRAND_PREFIX` + `NEXT_PUBLIC_BRAND_SUFFIX`
+- **Widget colours** → `NEXT_PUBLIC_COLOR_PRIMARY` + `NEXT_PUBLIC_COLOR_ACCENT`
+
+To also restyle the app chrome (header bar, buttons), edit the two colour
+values in `app/globals.css`. Replace `app/icon.svg` to change the favicon.
+</details>
+
+<details>
+<summary><strong>Do I need to buy a domain?</strong></summary>
+
+No — the free Vercel subdomain (`your-app.vercel.app`) works out of the box. A
+custom domain is only needed if you want branded results via a Travelpayouts
+**White Label**, or just a nicer URL on the kiosk.
+</details>
+
+<details>
+<summary><strong>Can one deployment serve several shops?</strong></summary>
+
+Yes. One deploy handles unlimited shops — each kiosk just opens the URL with its
+own `?ref=`, e.g. `/?ref=cafe-central` vs `/?ref=airport-news`. Every booking is
+attributed to the right shop through the `shmarker` sub-marker.
+</details>
+
+<details>
+<summary><strong>What about privacy / GDPR?</strong></summary>
+
+The kiosk stores only the `?ref=` shop code in `localStorage` — no personal
+data, no accounts, no tracking cookies of your own. Travelpayouts' own scripts
+have their own policy. Add a short privacy notice if your jurisdiction requires
+one.
+</details>
+
+<details>
+<summary><strong>Which languages are supported?</strong></summary>
+
+The widget follows `NEXT_PUBLIC_LOCALE` (e.g. `en`, `fr`, `nl`, `es`…). The few
+on-screen strings ("Book your flight…", "Touch to start") live in the
+components (`AttractScreen.js`, `KioskScreen.js`) — edit them for full
+translation.
+</details>
 
 ## Stack
 

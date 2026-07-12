@@ -119,6 +119,7 @@ by third-party sites (every other route stays `X-Frame-Options: SAMEORIGIN`).
 | `NEXT_PUBLIC_TP_TRS` | ✅ | — | Tracking source id of your Flights Search Form widget. |
 | `NEXT_PUBLIC_TP_DRIVE_SRC` | | — | Drive domain-verification script URL (injected only if set). |
 | `NEXT_PUBLIC_TP_SEARCH_URL` | | — | Host (no protocol) where results open, e.g. your White Label. |
+| `NEXT_PUBLIC_SHOW_HOTELS` | | `false` | Show the "also search hotels" checkbox in the flight widget. |
 | `NEXT_PUBLIC_BRAND_PREFIX` | | `Flight` | Brand name, first tone (foreground). |
 | `NEXT_PUBLIC_BRAND_SUFFIX` | | `Kiosk` | Brand name, second tone (accent). |
 | `NEXT_PUBLIC_COLOR_PRIMARY` | | `#0A0A0A` | Widget primary colour. |
@@ -156,6 +157,28 @@ blocks it you'll see the offline fallback — that's expected locally.
   locale by extending the dictionary in `lib/i18n.js`; the widget follows the
   same variable.
 - **Icon** → replace `app/icon.svg` (also used as the PWA icon).
+
+## Data & privacy
+
+This app is a thin, brand-able shell around Travelpayouts — it runs almost no
+logic of its own, and **collects no personal data**.
+
+- **What it stores:** only the `?ref=` shop code, in `localStorage`, to keep
+  per-shop attribution across a reload. No names, emails, accounts, or payment
+  data — ever. No first-party tracking cookies.
+- **What flows where:** the search widget and the results page are both hosted
+  by **Travelpayouts**. When a visitor searches, only the **search query**
+  (route, dates, passengers) and your **marker** are passed — via the URL — to
+  the results page. There is no shared backend and no database.
+- **Payments** happen on the airline/OTA's own checkout, never here, so there is
+  no card handling or PCI scope.
+- **Isolation:** every deployment uses its own marker/White Label (its own env
+  vars). One fork can never read another's traffic or bookings.
+- **`NEXT_PUBLIC_*` values are identifiers, not secrets** — they ship in the
+  client bundle by design. Never put an API token in one.
+
+Add your own privacy notice if your jurisdiction requires one; the third-party
+Travelpayouts scripts have their own policy.
 
 ## Stack
 

@@ -42,7 +42,10 @@ changes required. Everything is configured through environment variables.
 - **Mobile-continuity QR** — the customer scans it to finish on their phone,
   keeping the shop `?ref=` intact.
 - **Optional "Popular flights"** button to your results / White Label page.
-- Fully **rebrandable** (name + colours) via env vars.
+- Fully **rebrandable** (name + colours) via env vars, **installable PWA**.
+- **Resilient by design** — service worker caches the app shell (reloads offline
+  if the wifi drops), self-healing error screen, and the screen stays awake.
+- **Built-in languages** (EN / FR / NL) via `NEXT_PUBLIC_LOCALE`.
 
 ---
 
@@ -117,6 +120,8 @@ kiosk mode.
 cp .env.example .env.local   # fill in your values
 npm install
 npm run dev                  # http://localhost:3000/?ref=demo-shop
+npm run lint                 # ESLint (next/core-web-vitals)
+npm test                     # unit tests (Vitest)
 ```
 
 The Travelpayouts widget loads its script from `tpwidg.com`; if your network
@@ -127,10 +132,10 @@ blocks it you'll see the offline fallback — that's expected locally.
 - **Name / colours** → env vars above. To also restyle the app chrome (not just
   the widget), edit the two colours in `app/globals.css` (Tailwind v4 `@theme`
   is static, so it can't read env at runtime).
-- **Copy / language** → the on-screen strings live in the components
-  (`AttractScreen.js`, `KioskScreen.js`); the widget itself follows
-  `NEXT_PUBLIC_LOCALE`.
-- **Icon** → replace `app/icon.svg`.
+- **Language** → set `NEXT_PUBLIC_LOCALE` (`en`, `fr`, `nl` built in). Add a
+  locale by extending the dictionary in `lib/i18n.js`; the widget follows the
+  same variable.
+- **Icon** → replace `app/icon.svg` (also used as the PWA icon).
 
 ## Stack
 

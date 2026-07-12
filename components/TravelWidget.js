@@ -6,6 +6,7 @@ import {
   buildMarker,
   TP_TRS,
   TP_SEARCH_URL,
+  SHOW_HOTELS,
   COLOR_PRIMARY,
   COLOR_ACCENT,
   LOCALE,
@@ -28,7 +29,7 @@ const WIDGET_TYPE = { promo_id: "7879", campaign_id: "100" };
 const WIDGET_PARAMS = {
   currency: CURRENCY,
   trs: TP_TRS,
-  show_hotels: "true",
+  show_hotels: SHOW_HOTELS,
   powered_by: "false",
   locale: LOCALE,
   primary_override: COLOR_PRIMARY,

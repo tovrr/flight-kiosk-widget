@@ -31,6 +31,32 @@ changes required. Everything is configured through environment variables.
 
 ---
 
+## 💸 Deploy your own & earn — in 5 minutes
+
+Every flight booked through your kiosk pays **you** an affiliate commission via
+Travelpayouts. This template is the fastest way to get a branded,
+production-ready booking kiosk (or an embeddable widget) live — **no code, just
+environment variables**.
+
+<p align="center">
+  <a href="https://vercel.com/new/clone?repository-url=https://github.com/tovrr/flight-kiosk-widget">
+    <img src="https://vercel.com/button" alt="Deploy with Vercel" height="34">
+  </a>
+</p>
+
+1. **[Create a free Travelpayouts account](https://www.travelpayouts.com/?marker=749997)** and grab your marker + a Flights Search Form `trs`.
+2. **Deploy** (one click above), paste those two values as env vars.
+3. **Put a tablet in a shop** — or drop the `<script>` on any site — and earn on every booking. You keep **100 % of the affiliate commission**.
+
+> **Transparency:** the Travelpayouts sign-up link above carries the
+> maintainer's *refer-a-partner* marker. It costs you **nothing** and does **not**
+> reduce your commissions — Travelpayouts simply shares a small slice of *their*
+> own margin with the referrer. Prefer not to? Just sign up directly at
+> [travelpayouts.com](https://www.travelpayouts.com/). Either way, the code is
+> yours under MIT.
+
+---
+
 ## Features
 
 - **Kiosk mode** — fullscreen, no scroll, locked viewport, tablet-first.

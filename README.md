@@ -13,8 +13,9 @@
 A self-service **flight-booking kiosk** for physical shops — designed to run
 fullscreen on a tablet/iPad in kiosk mode. A customer searches for a flight,
 compares prices, and books, while the partner shop is tracked via a `?ref=`
-in the URL. Monetisation is **[Travelpayouts](https://www.travelpayouts.com/)
-affiliate** (you earn a commission on every booking).
+in the URL. Monetisation is
+**[Travelpayouts](https://www.travelpayouts.com/?marker=749997) affiliate**
+(you earn a commission on every booking).
 
 Fork it, plug in your own Travelpayouts IDs, set a brand, and deploy — no code
 changes required. Everything is configured through environment variables.
@@ -53,14 +54,6 @@ changes required. Everything is configured through environment variables.
 3. The customer searches → is redirected to the results page → books with the
    seller. **Travelpayouts pays you the commission** (marker), and you know
    which shop drove it (sub-marker).
-
-> **Want to earn from other people running this kiosk too?** Travelpayouts has
-> a **referral (refer-a-partner) programme**: sign people up through your
-> referral link and earn a share of their revenue. Put your link below and in
-> the deploy step — that's the intended growth loop for this template.
->
-> ⭐ **Sign up with our referral link:**
-> **<https://www.travelpayouts.com/?marker=749997>**
 
 ---
 

@@ -9,7 +9,14 @@ affiliate** (you earn a commission on every booking).
 Fork it, plug in your own Travelpayouts IDs, set a brand, and deploy — no code
 changes required. Everything is configured through environment variables.
 
-<!-- Add a screenshot here once deployed: ![screenshot](docs/screenshot.png) -->
+![Flight Kiosk — booking screen with search widget, per-shop tracking badge and mobile-continuity QR](docs/screenshot.png)
+
+<p align="center"><em>Booking screen · the attract screen shown between customers 👇</em></p>
+
+![Flight Kiosk — attract screen](docs/attract.png)
+
+> The widget above is rendered from a mock in this demo; in production the real
+> Travelpayouts flight-search form loads in its place.
 
 ---
 
@@ -42,7 +49,8 @@ changes required. Everything is configured through environment variables.
 > referral link and earn a share of their revenue. Put your link below and in
 > the deploy step — that's the intended growth loop for this template.
 >
-> ⭐ **Referral link:** `https://REPLACE-WITH-YOUR-TRAVELPAYOUTS-REFERRAL-LINK`
+> ⭐ **Sign up with our referral link:**
+> **<https://www.travelpayouts.com/?marker=749997>**
 
 ---
 
@@ -50,8 +58,8 @@ changes required. Everything is configured through environment variables.
 
 ### 1. Get a Travelpayouts account
 
-Sign up at [travelpayouts.com](https://www.travelpayouts.com/) (ideally via a
-referral link). From the dashboard you need:
+Sign up at [travelpayouts.com](https://www.travelpayouts.com/?marker=749997).
+From the dashboard you need:
 
 - your **marker / Partner ID** → `NEXT_PUBLIC_TRAVELPAYOUTS_MARKER`
 - a **"Flights Search Form"** widget → copy its **`trs`** →

@@ -31,7 +31,13 @@ changes required. Everything is configured through environment variables.
 
 ---
 
-## 💸 Deploy your own & earn — in 5 minutes
+## 💸 Deploy your own \## 💸 Deploy your own & earn — in 5 minutes earn — in 5 minutes
+
+> 🏗️ Built by [**DevForge Systems**](https://devforge.systems) — enterprise software development, from build to deploy.
+
+---
+
+## 💸 Deploy your own \## 💸 Deploy your own & earn — in 5 minutes earn — in 5 minutes
 
 Every flight booked through your kiosk pays **you** an affiliate commission via
 Travelpayouts. This template is the fastest way to get a branded,

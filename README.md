@@ -33,6 +33,8 @@ changes required. Everything is configured through environment variables.
 
 ## 💸 Deploy your own & earn — in 5 minutes
 
+> 🏗️ Built by [**DevForge Systems**](https://devforge.systems) — enterprise software development, from build to deploy.
+
 Every flight booked through your kiosk pays **you** an affiliate commission via
 Travelpayouts. This template is the fastest way to get a branded,
 production-ready booking kiosk (or an embeddable widget) live — **no code, just

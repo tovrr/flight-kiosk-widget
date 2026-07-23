@@ -214,7 +214,7 @@ Travelpayouts scripts have their own policy.
 
 ## Stack
 
-Next.js 16 (App Router) · React 19 · Tailwind CSS 4 · `react-qr-code` ·
+Next.js 16 (App Router) · React 18 · Tailwind CSS 4 · `react-qr-code` ·
 `lucide-react` · Node 22.
 
 ## License

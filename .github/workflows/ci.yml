@@ -1,3 +1,7 @@
+# CI Pipeline Template — Devforge Systems Estate
+# Usage: Copy to .github/workflows/ci.yml in any JS/TS repo
+# Customize: node-version, scripts if different from npm standard
+
 name: CI
 
 on:
@@ -7,18 +11,57 @@ on:
     branches: [main, staging]
 
 jobs:
+  # Job id/name kept as "build" — this repo's branch protection on `main`
+  # requires a status check literally named "build"; renaming it (as the
+  # generic template does) makes the required check unsatisfiable forever.
   build:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v7
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: 22
-          cache: npm
-      - run: npm ci
-      - run: npm run lint
-      - run: npm test
-      - run: npm run build
+          node-version: "22"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Test
+        run: npm run test
+
+      - name: Build
+        run: npm run build
         env:
           # Build with placeholder identifiers so CI needs no secrets.
           NEXT_PUBLIC_TRAVELPAYOUTS_MARKER: "000000"
+
+  secret-guard:
+    name: Secret Leak Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check for committed secrets
+        run: |
+          echo "Checking for potential secrets in commits..."
+          # Check if any .env files are committed
+          if git ls-files | grep -q '\.env$'; then
+            echo "❌ .env file is committed! Remove it!"
+            exit 1
+          fi
+          # Check for API keys in code. Exclude this workflow file itself:
+          # it legitimately contains the detection patterns as literal text.
+          if git ls-files | grep -v '^\.github/workflows/ci\.yml$' \
+              | xargs -r grep -l 'AIzaSy\|sk_live\|pk_live\|ghp_\|gho_' 2>/dev/null; then
+            echo "❌ Potential secrets found in committed files!"
+            exit 1
+          fi
+          echo "✅ No secrets detected"

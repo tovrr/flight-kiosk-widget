@@ -11,8 +11,10 @@ on:
     branches: [main, staging]
 
 jobs:
-  lint-test-build:
-    name: Lint & Test & Build
+  # Job id/name kept as "build" — this repo's branch protection on `main`
+  # requires a status check literally named "build"; renaming it (as the
+  # generic template does) makes the required check unsatisfiable forever.
+  build:
     runs-on: ubuntu-latest
 
     steps:

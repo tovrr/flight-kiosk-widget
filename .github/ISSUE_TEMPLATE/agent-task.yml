@@ -1,0 +1,36 @@
+---
+name: Agent task (swarm work order)
+description: Scoped work order for a swarm agent.
+title: "[agent-task] "
+labels: ["swarm-dispatch"]
+body:
+  - type: input
+    id: branch
+    attributes:
+      label: Branch
+      description: "Cut FROM origin/staging"
+      placeholder: hermes/task-name
+    validations:
+      required: true
+  - type: textarea
+    id: files
+    attributes:
+      label: Files in scope
+    validations:
+      required: true
+  - type: textarea
+    id: action
+    attributes:
+      label: Action
+    validations:
+      required: true
+  - type: textarea
+    id: validation
+    attributes:
+      label: Validation gates
+      value: |
+        - npm run build
+        - npm test
+        - npm run lint
+    validations:
+      required: true

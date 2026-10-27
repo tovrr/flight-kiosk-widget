@@ -8,7 +8,7 @@ body:
     id: branch
     attributes:
       label: Branch
-      description: "Cut FROM origin/staging"
+      description: "Cut FROM origin/main"
       placeholder: hermes/task-name
     validations:
       required: true

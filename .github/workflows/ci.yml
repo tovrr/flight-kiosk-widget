@@ -6,9 +6,9 @@ name: CI
 
 on:
   push:
-    branches: [main, staging]
+    branches: [main]
   pull_request:
-    branches: [main, staging]
+    branches: [main]
 
 jobs:
   # Job id/name kept as "build" — this repo's branch protection on `main`

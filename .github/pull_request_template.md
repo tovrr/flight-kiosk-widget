@@ -31,4 +31,4 @@ assignees: []
 - [ ] Lint / typecheck / build pass
 - [ ] Docs updated if behavior changes
 - [ ] No secrets or credentials added
-- [ ] Staging validated before targeting main
+- [ ] Validated on a feature branch before targeting main

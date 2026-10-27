@@ -40,7 +40,7 @@ Verify every doc claim against code and `git log`. Code wins.
 
 ## Workflow
 
-- Branch from `staging`, PR to `staging`
+- Feature branch → PR into `main`
 - One PR = one scope (Boss Rule #14)
 - CI must be green before requesting review
 - Never self-merge

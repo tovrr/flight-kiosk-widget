@@ -2,7 +2,7 @@
 
 ## Règles strictes
 
-- **Règle 1** : Ne jamais commiter directement sur `main`. Toujours feature branch → PR → `staging`.
+- **Règle 1** : Ne jamais commiter directement sur `main`. Toujours feature branch → PR into `main`.
 - **Règle 2** : Le tracking `?ref=` est le cœur du business. Toute modif front-end doit le préserver.
 - **Règle 3** : UI kiosque : plein écran, zéro scroll, contraste fort (#FFE800 / #0A0A0A).
 - **Règle 4** : Travelpayouts marker = `NEXT_PUBLIC_TRAVELPAYOUTS_MARKER`. En CI, `000000` placeholder.
